@@ -5,7 +5,7 @@ jest.mock('axios');
 
 describe('Given controllers/comments', () => {
   describe('When getComments resolves', () => {
-    test('Then respond with and array of {userId, title and body}', async () => {
+    test('Then respond with and array of {postId, id, name, email, body}', async () => {
       const response = {
         data: [
           {
@@ -34,7 +34,7 @@ describe('Given controllers/comments', () => {
     });
   });
 
-  describe('When getPosts rejects', () => {
+  describe('When getComments rejects', () => {
     test('Then respond with 500', async () => {
       const error = {
         message: 'error'
