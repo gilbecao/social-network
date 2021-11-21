@@ -16,12 +16,12 @@ server.use(morgan('dev'));
 server.use(express.json());
 
 const userRouter = require('./src/routes/user');
+const postRouter = require('./src/routes/post');
+const albumRouter = require('./src/routes/album');
 
 server.use(`/api/${version}/users`, userRouter);
-
-const postRouter = require('./src/routes/post');
-
 server.use(`/api/${version}/posts`, postRouter);
+server.use(`/api/${version}/albums`, albumRouter);
 
 server.listen(port, () =>
   debug(`Server is running on ${chalk.red(`http://localhost:${port}`)}`)
