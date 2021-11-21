@@ -1,5 +1,4 @@
 const axios = require('axios');
-const Post = require('../models/post');
 
 const postUrl = `${process.env.API_URL}posts`;
 
