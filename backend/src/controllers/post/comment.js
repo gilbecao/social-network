@@ -1,5 +1,4 @@
 const axios = require('axios');
-const Comment = require('../models/comment');
 
 async function getComments(req, res) {
   try {

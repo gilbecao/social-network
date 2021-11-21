@@ -6,7 +6,7 @@ const {
   deletePost
 } = require('../controllers/post');
 
-const { getComments } = require('../controllers/comments');
+const { getComments } = require('../controllers/post/comment');
 
 const postRouter = new Router();
 

@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { getComments } = require('../controllers/comments');
+const { getComments } = require('../controllers/post/comment');
 
 jest.mock('axios');
 
