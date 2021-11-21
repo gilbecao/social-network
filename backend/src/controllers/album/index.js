@@ -1,5 +1,4 @@
 const axios = require('axios');
-const Album = require('../../models/album');
 
 async function getAlbums(req, res) {
   try {
