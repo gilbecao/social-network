@@ -6,7 +6,7 @@ export default class Post {
   public title: string;
   public body: string;
 
-  constructor(apiPost = {} as PostApi) {
+  constructor(apiPost: PostApi) {
     this.userId = apiPost.userId;
     this.id = apiPost.id;
     this.title = apiPost.title;
