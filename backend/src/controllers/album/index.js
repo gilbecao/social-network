@@ -11,7 +11,7 @@ async function getAlbums(req, res) {
   }
 }
 
-async function getOneAlbumById(req, res) {
+async function getAlbumById(req, res) {
   try {
     const { data } = await axios.get(`${process.env.API_URL}albums${req.url}`);
     res.json(data);
@@ -23,5 +23,5 @@ async function getOneAlbumById(req, res) {
 
 module.exports = {
   getAlbums,
-  getOneAlbumById
+  getAlbumById
 };
