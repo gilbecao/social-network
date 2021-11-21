@@ -19,7 +19,7 @@ const albumRouter = require('./src/routes/album');
 
 server.use(`/api/${version}/users`, userRouter);
 server.use(`/api/${version}/posts`, postRouter);
-server.use('/api/albums', albumRouter);
+server.use(`/api/${version}/albums`, albumRouter);
 
 server.listen(port, () =>
   debug(`Server is running on ${chalk.red(`http://localhost:${port}`)}`)
