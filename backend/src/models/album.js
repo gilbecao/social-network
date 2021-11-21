@@ -1,11 +1,9 @@
 const { model, Schema } = require('mongoose');
 
 const albumSchema = Schema({
-  albumId: Number,
+  userId: Number,
   id: Number,
-  title: String,
-  url: String,
-  thumbnailUrl: String
+  title: String
 });
 
 module.exports = model('Album', albumSchema);
