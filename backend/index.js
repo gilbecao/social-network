@@ -14,7 +14,7 @@ server.use(express.json());
 
 const userRouter = require('./src/routes/user');
 
-server.use('/api/user', userRouter);
+server.use('/api/users', userRouter);
 
 const postRouter = require('./src/routes/post');
 

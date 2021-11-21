@@ -6,9 +6,14 @@ const {
   deletePost
 } = require('../controllers/post');
 
-const userRouter = new Router();
+const commentsController = (req, res) => res.send('comments works');
 
-userRouter.route('/').get(getPosts).post(createPost);
-userRouter.route('/:postId').put(updatePost).delete(deletePost);
+const postRouter = new Router();
 
-module.exports = userRouter;
+postRouter.route('/').get(getPosts).post(createPost);
+
+postRouter.route('/:postId').put(updatePost).delete(deletePost);
+
+postRouter.route('/:postId/comments').get(commentsController);
+
+module.exports = postRouter;
