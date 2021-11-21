@@ -10,6 +10,7 @@ import { PostCreateComponent } from './pages/post-create/post-create.component';
 import { PostDetailsComponent } from './pages/post-details/post-details.component';
 import { PostEditComponent } from './pages/post-edit/post-edit.component';
 import { PostComponent } from './components/post/post.component';
+import { PostListComponent } from './components/post-list/post-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PostComponent } from './components/post/post.component';
     PostCreateComponent,
     PostEditComponent,
     PostComponent,
+    PostListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
