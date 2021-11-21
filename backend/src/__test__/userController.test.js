@@ -1,8 +1,8 @@
-const userController = require('../controllers/userController');
-const User = require('../models/userModel');
-const userMock = require('../mocks/userMock');
+const userController = require('../controllers/user');
+const User = require('../models/user');
+const userMock = require('../mocks/user');
 
-jest.mock('../models/userModel');
+jest.mock('../models/user');
 
 let req;
 let res;
