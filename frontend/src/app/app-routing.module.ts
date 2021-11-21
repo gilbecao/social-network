@@ -7,12 +7,11 @@ import { PostDetailsComponent } from './pages/post-details/post-details.componen
 import { PostEditComponent } from './pages/post-edit/post-edit.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'post/:id', component: PostDetailsComponent },
   { path: 'create', component: PostCreateComponent },
   { path: 'edit', component: PostEditComponent },
-  { path: '**', redirectTo: '/home' },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
