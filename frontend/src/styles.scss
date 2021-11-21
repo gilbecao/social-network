@@ -1,0 +1,43 @@
+/**** FONTS ****/
+
+@font-face {
+  font-family: Alliance;
+  src: url(assets/fonts/AllianceNo1-Regular.woff);
+}
+
+@font-face {
+  font-family: Alliance;
+  src: url(assets/fonts/AllianceNo1-ExtraBold.woff);
+  font-weight: 800;
+}
+
+body {
+  font-family: Alliance, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 44px;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+a {
+  text-decoration: none;
+}
