@@ -6,7 +6,7 @@ const {
   deletePost
 } = require('../controllers/post');
 
-const commentsController = (req, res) => res.send('comments works');
+const { getComments } = require('../controllers/comments');
 
 const postRouter = new Router();
 
@@ -14,6 +14,6 @@ postRouter.route('/').get(getPosts).post(createPost);
 
 postRouter.route('/:postId').put(updatePost).delete(deletePost);
 
-postRouter.route('/:postId/comments').get(commentsController);
+postRouter.route('/:postId/comments').get(getComments);
 
 module.exports = postRouter;
