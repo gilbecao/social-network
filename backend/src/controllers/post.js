@@ -1,5 +1,6 @@
 const axios = require('axios');
-const Post = require('../../models/post');
+const Post = require('../models/post');
+const commentService = require('../services/comment');
 
 const postUrl = `${process.env.API_URL}/posts`;
 
@@ -65,9 +66,21 @@ async function deletePost(req, res) {
   }
 }
 
+async function getPostComments(req, res) {
+  try {
+    const { postId } = req.params;
+    const response = await commentService.getComments({ postId });
+    res.json(response);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
+
 module.exports = {
   createPost,
   getPosts,
   updatePost,
   deletePost,
+  getPostComments,
 };
