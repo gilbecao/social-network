@@ -11,12 +11,19 @@
   font-weight: 800;
 }
 
+/**** COLORS ****/
+
+$main-color: #198754;
+
+/**** GENERAL ****/
+
 body {
   font-family: Alliance, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 26px;
   color: #333;
+  background-color: #f8f8f8;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -27,6 +34,7 @@ main {
 }
 
 h1 {
+  color: $main-color;
   font-weight: 800;
   font-size: 40px;
   line-height: 44px;
@@ -40,6 +48,16 @@ h2 {
 
 a {
   text-decoration: none;
+}
+
+.blockquote {
+  font-size: 18px;
+}
+
+/**** POST LIST ****/
+
+.post-list {
+  background-color: #fff;
 }
 
 /**** POST CARDS ****/
