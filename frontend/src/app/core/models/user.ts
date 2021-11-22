@@ -23,7 +23,7 @@ export default class User {
     bs: string;
   };
 
-  constructor(userApi: UserApi) {
+  constructor(userApi = {} as UserApi) {
     this.id = userApi.id;
     this.name = userApi.name;
     this.username = userApi.username;
