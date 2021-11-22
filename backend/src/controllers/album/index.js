@@ -24,5 +24,5 @@ async function getAlbumById(req, res) {
 
 module.exports = {
   getAlbums,
-  getAlbumById
+  getAlbumById,
 };
