@@ -1,0 +1,8 @@
+<figure *ngFor="let comment of comments">
+  <blockquote class="blockquote mt-5">
+    <p class="px-5">{{ comment.body }}</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    {{ comment.email }}
+  </figcaption>
+</figure>
