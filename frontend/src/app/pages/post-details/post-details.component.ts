@@ -22,8 +22,6 @@ export class PostDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      console.log(params['id']);
-    });
+    console.log(this.route.snapshot.paramMap.get('id'));
   }
 }
