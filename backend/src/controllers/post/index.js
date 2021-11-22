@@ -1,4 +1,5 @@
 const axios = require('axios');
+const Post = require('../../models/post');
 
 const postUrl = `${process.env.API_URL}/posts`;
 
@@ -27,16 +28,10 @@ async function getPosts(req, res) {
   }
 }
 
-async function createPost(req, res) {
+async function createPost({ body }, res) {
   try {
-    const data = req.body;
-    const response = await axios.post(`${postUrl}`, data, {
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    });
-
-    res.json(response.data);
+    const newPost = await Post.create(body);
+    res.json(newPost);
   } catch (error) {
     res.status(500);
     res.send(error);
