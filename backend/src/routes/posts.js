@@ -4,13 +4,12 @@ const {
   createPost,
   updatePost,
   deletePost,
+  getPostComments,
 } = require('../controllers/post');
-
-const { getComments } = require('../controllers/post/comment');
 
 const router = new Router();
 router.route('/').get(getPosts).post(createPost);
 router.route('/:postId').put(updatePost).delete(deletePost);
-router.route('/:postId/comments').get(getComments);
+router.route('/:postId/comments').get(getPostComments);
 
 module.exports = router;
