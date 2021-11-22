@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  map,
-  switchMap,
-  tap,
-} from 'rxjs/operators';
+import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
 import Post from '../../models/post';
 import User from '../../models/user';
 import { PostService } from '../../services/post/post.service';
@@ -20,9 +14,9 @@ export class PostStoreService {
   searchTerm$ = new Subject<string>();
 
   constructor(private postService: PostService) {
+    this.getPosts().subscribe();
     this.displayPosts$ = this.searchTerm$.pipe(
       debounceTime(300),
-      distinctUntilChanged(),
       switchMap((term: string) => this.getPostsByAuthor(term))
     );
   }
@@ -31,9 +25,9 @@ export class PostStoreService {
     return this.posts$.pipe(
       map((posts: Post[]) =>
         posts.filter((post: Post) => {
-          return post.author.name
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase());
+          return post.author?.name
+            ? post.author.name.toLowerCase().includes(searchTerm.toLowerCase())
+            : post;
         })
       )
     );

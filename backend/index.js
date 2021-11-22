@@ -15,13 +15,19 @@ server.use(cors());
 server.use(morgan('dev'));
 server.use(express.json());
 
-const userRouter = require('./src/routes/user');
-const postRouter = require('./src/routes/post');
-const albumRouter = require('./src/routes/album');
+const users = require('./src/routes/users');
+const posts = require('./src/routes/posts');
+const albums = require('./src/routes/albums');
+const comments = require('./src/routes/comments');
+const todos = require('./src/routes/todos');
+const photos = require('./src/routes/photos');
 
-server.use(`/api/${version}/users`, userRouter);
-server.use(`/api/${version}/posts`, postRouter);
-server.use(`/api/${version}/albums`, albumRouter);
+server.use(`/api/${version}/users`, users);
+server.use(`/api/${version}/posts`, posts);
+server.use(`/api/${version}/albums`, albums);
+server.use(`/api/${version}/comments`, comments);
+server.use(`/api/${version}/todos`, todos);
+server.use(`/api/${version}/photos`, photos);
 
 server.listen(port, () =>
   debug(`Server is running on ${chalk.red(`http://localhost:${port}`)}`)

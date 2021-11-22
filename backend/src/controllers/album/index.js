@@ -1,5 +1,5 @@
 const axios = require('axios');
-const Album = require('../../models/album')
+const Album = require('../../models/album');
 
 const albumUrl = `${process.env.API_URL}/albums`;
 
@@ -35,5 +35,5 @@ async function createAlbum({ body }, res) {
 module.exports = {
   getAlbums,
   getAlbumById,
-  createAlbum
+  createAlbum,
 };

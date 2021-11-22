@@ -1,4 +1,4 @@
-const Comment = require('../models/photo');
+const Comment = require('../models/comment');
 
 async function createComment({ body }, res) {
   try {
