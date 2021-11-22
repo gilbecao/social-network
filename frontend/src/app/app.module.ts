@@ -11,6 +11,8 @@ import { PostDetailsComponent } from './pages/post-details/post-details.componen
 import { PostEditComponent } from './pages/post-edit/post-edit.component';
 import { PostComponent } from './components/post/post.component';
 import { PostListComponent } from './components/post-list/post-list.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PostFilterComponent } from './components/post-filter/post-filter.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { PostListComponent } from './components/post-list/post-list.component';
     PostEditComponent,
     PostComponent,
     PostListComponent,
+    FooterComponent,
+    PostFilterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
