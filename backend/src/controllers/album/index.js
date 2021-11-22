@@ -1,8 +1,10 @@
 const axios = require('axios');
 
+const albumUrl = `${process.env.API_URL}/albums`;
+
 async function getAlbums(req, res) {
   try {
-    const { data } = await axios.get(`${process.env.API_URL}albums${req.url}`);
+    const { data } = await axios.get(`${albumUrl}${req.url}`);
     res.json(data);
   } catch (error) {
     res.status(500);
@@ -12,7 +14,7 @@ async function getAlbums(req, res) {
 
 async function getAlbumById(req, res) {
   try {
-    const { data } = await axios.get(`${process.env.API_URL}albums${req.url}`);
+    const { data } = await axios.get(`${albumUrl}${req.url}`);
     res.json(data);
   } catch (error) {
     res.status(500);

@@ -4,7 +4,7 @@ async function getComments(req, res) {
   try {
     const { postId } = req.params;
     const { data } = await axios.get(
-      `${process.env.API_URL}posts/${postId}/comments`
+      `${process.env.API_URL}/posts/${postId}/comments`
     );
     res.json(data);
   } catch (error) {

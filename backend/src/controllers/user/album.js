@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const userUrl = `${process.env.API_URL}users`;
+const userUrl = `${process.env.API_URL}/users`;
 
 async function getAlbums(req, res) {
   const { userId } = req.params;

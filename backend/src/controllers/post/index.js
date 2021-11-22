@@ -1,10 +1,10 @@
 const axios = require('axios');
 
-const postUrl = `${process.env.API_URL}posts`;
+const postUrl = `${process.env.API_URL}/posts`;
 
 async function getPosts(req, res) {
   try {
-    const { data } = await axios.get(`${process.env.API_URL}posts${req.url}`);
+    const { data } = await axios.get(`${postUrl}${req.url}`);
     res.json(data);
   } catch (error) {
     res.status(500);
