@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import Post from 'src/app/core/models/post';
+import { PostStoreService } from 'src/app/core/stores/post/post-store.service';
+import User from '../../core/models/user';
 
 @Component({
   selector: 'app-post-filter',
   templateUrl: './post-filter.component.html',
-  styleUrls: ['./post-filter.component.scss']
+  styleUrls: ['./post-filter.component.scss'],
 })
-export class PostFilterComponent implements OnInit {
+export class PostFilterComponent {
+  constructor(private postStore: PostStoreService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  search(searchValue: string) {
+    this.postStore.searchTerm$.next(searchValue);
   }
-
 }
