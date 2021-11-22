@@ -3,8 +3,8 @@ const {
   getAlbums,
   getAlbumById,
   createAlbum,
+  getAlbumPhotos
 } = require('../controllers/album');
-const { getAlbumPhotos } = require('../controllers/album/photos');
 
 const router = new Router();
 
