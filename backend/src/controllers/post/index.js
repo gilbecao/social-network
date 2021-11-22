@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const postUrl = `${process.env.API_URL}posts`;
+const postUrl = `${process.env.API_URL}/posts`;
 
 async function getPosts(req, res) {
   try {
