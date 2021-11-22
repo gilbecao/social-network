@@ -1,4 +1,27 @@
+const { default: axios } = require('axios');
 const User = require('../../models/user');
+
+const userUrl = `${process.env.API_URL}/users`;
+
+async function getUsers(req, res) {
+  try {
+    const { data } = await axios.get(`${userUrl}${req.url}`);
+    res.json(data);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
+
+async function getUserById(req, res) {
+  try {
+    const { data } = await axios.get(`${userUrl}/${req.params.userId}`);
+    res.json(data);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
 
 async function createUser({ body }, res) {
   try {
@@ -11,5 +34,7 @@ async function createUser({ body }, res) {
 }
 
 module.exports = {
+  getUsers,
+  getUserById,
   createUser
 };
