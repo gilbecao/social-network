@@ -1,12 +1,19 @@
-const { default: axios } = require('axios');
-const User = require('../../models/user');
+const userService = require('../../services/user');
 
-const userUrl = `${process.env.API_URL}/users`;
+async function createUser({ body }, res) {
+  try {
+    const newUser = await userService.createUser(body);
+    res.json(newUser);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
 
 async function getUsers(req, res) {
   try {
-    const { data } = await axios.get(`${userUrl}${req.url}`);
-    res.json(data);
+    const response = await userService.getUsers();
+    res.json(response);
   } catch (error) {
     res.status(500);
     res.send(error);
@@ -15,18 +22,30 @@ async function getUsers(req, res) {
 
 async function getUserById(req, res) {
   try {
-    const { data } = await axios.get(`${userUrl}/${req.params.userId}`);
-    res.json(data);
+    const { userId } = req.params;
+    const response = await userService.getUserById(userId);
+    res.json(response);
   } catch (error) {
     res.status(500);
     res.send(error);
   }
 }
 
-async function createUser({ body }, res) {
+async function updateUserById({ body, params: { userId } }, res) {
   try {
-    const newUser = await User.create(body);
-    res.json(newUser);
+    const response = await userService.updateUserById(userId, body);
+    res.json(response);
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+  }
+}
+
+async function deleteUserById(req, res) {
+  try {
+    const { userId } = req.params;
+    await userService.deleteUserById(userId);
+    res.send();
   } catch (error) {
     res.status(500);
     res.send(error);
@@ -34,7 +53,9 @@ async function createUser({ body }, res) {
 }
 
 module.exports = {
+  createUser,
   getUsers,
   getUserById,
-  createUser
+  updateUserById,
+  deleteUserById,
 };
