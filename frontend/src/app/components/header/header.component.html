@@ -1,4 +1,17 @@
 <div class="row text-center">
-  <a routerLink="/"> <h1 class="pt-3">Coders Network</h1></a>
-  <span class="subtitle">Made by coders!</span>
+  <a routerLink="/"> <h1 class="text-gradient pt-5">Coders Network</h1></a>
+  <span class="subtitle mb-4">Frontend Technical Test</span>
+
+  <ng-container>
+    <i
+      *ngIf="!darkMode"
+      class="bi bi-toggle-off cursor fs-3"
+      (click)="switchTheme()"
+    ></i>
+    <i
+      *ngIf="darkMode"
+      class="bi bi-toggle-on cursor fs-3"
+      (click)="switchTheme()"
+    ></i>
+  </ng-container>
 </div>
