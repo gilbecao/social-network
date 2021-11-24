@@ -1,12 +1,17 @@
-<div class="col-12">
-  <label for="search-box">Author search</label>
-  <input
-    #searchBox
-    type="text"
-    id="search-box"
-    class="form-control"
-    placeholder="Search for author"
-    autocomplete="off"
-    (input)="search(searchBox.value)"
-  />
+<div class="col-12 bg-search light-shadow rounded-5 py-4 px-3 mb-5">
+  <h2 class="pb-3">Posts</h2>
+  <div class="col-12 col-sm-6 offset-sm-3 d-flex flex-row mb-2">
+    <label for="search-box" class="col-sm-1 col-form-label">
+      <i class="bi bi-search me-3"></i>
+    </label>
+    <input
+      #searchBox
+      type="text"
+      class="form-control"
+      id="search-box"
+      placeholder="Search for author"
+      autocomplete="off"
+      (input)="search(searchBox.value)"
+    />
+  </div>
 </div>

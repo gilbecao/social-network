@@ -1,8 +1,12 @@
-<figure *ngFor="let comment of comments">
-  <blockquote class="blockquote mt-5">
-    <p class="px-5">{{ comment.body }}</p>
-  </blockquote>
-  <figcaption class="blockquote-footer">
-    {{ comment.email }}
-  </figcaption>
-</figure>
+<div class="post-list rounded-5 bg-search light-shadow p-5">
+  <h2 class="pb-5 border-bottom">Comments</h2>
+
+  <figure *ngFor="let comment of comments">
+    <blockquote class="blockquote mt-5">
+      <p class="px-5">{{ comment.body }}</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      {{ comment.email }}
+    </figcaption>
+  </figure>
+</div>
