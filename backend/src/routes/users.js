@@ -5,11 +5,10 @@ const {
   getUserById,
   updateUserById,
   deleteUserById,
+  getUserAlbums,
+  getUserPosts,
+  getUserTodos
 } = require('../controllers/user');
-
-const { getAlbums } = require('../controllers/user/album');
-const { getTodos } = require('../controllers/user/todo');
-const { getPosts } = require('../controllers/user/post');
 
 const router = new Router();
 
@@ -21,8 +20,8 @@ router
   .put(updateUserById)
   .delete(deleteUserById);
 
-router.route('/:userId/albums').get(getAlbums);
-router.route('/:userId/todos').get(getTodos);
-router.route('/:userId/posts').get(getPosts);
+router.route('/:userId/albums').get(getUserAlbums);
+router.route('/:userId/posts').get(getUserPosts);
+router.route('/:userId/todos').get(getUserTodos);
 
 module.exports = router;
