@@ -1,0 +1,34 @@
+<div class="rounded-5 bg-search light-shadow p-5 pb-3 mx-0 mb-5">
+  <img
+    src="../../../assets/images/user.png"
+    alt="user"
+    width="120"
+    height="120"
+    class="rounded-circle border border-white"
+  />
+  <h3 class="border-bottom my-3 py-3">{{ author.name }}</h3>
+
+  <ul class="author__list list-unstyled text-start">
+    <li><i class="text-gradient bi bi-person"></i>{{ author.username }}</li>
+    <li><i class="text-gradient bi bi-envelope"></i>{{ author.email }}</li>
+    <li><i class="text-gradient bi bi-telephone"></i>{{ author.phone }}</li>
+    <li>
+      <i class="text-gradient bi bi-box-arrow-up-right"></i>{{ author.website }}
+    </li>
+    <li
+      data-bs-toggle="tooltip"
+      data-bs-placement="left"
+      [title]="author.company.catchPhrase"
+    >
+      <i class="text-gradient bi bi-building"></i>{{ author.company.name }}
+    </li>
+    <li>
+      <i class="text-gradient bi bi-geo-alt"></i>
+      <address>
+        {{ author.address.street }} {{ author.address.suite }}
+        {{ author.address.city }}
+        {{ author.address.zipcode }}
+      </address>
+    </li>
+  </ul>
+</div>
